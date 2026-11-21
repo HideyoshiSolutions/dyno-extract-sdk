@@ -1,8 +1,4 @@
-.github/workflows/python.yml
 .gitignore
-.gitlab-ci.yml
-.openapi-generator-ignore
-.travis.yml
 README.md
 docs/BlueprintApi.md
 docs/FileApi.md
@@ -41,7 +37,6 @@ dyno_extract_sdk/models/upload_request_model.py
 dyno_extract_sdk/models/validation_error.py
 dyno_extract_sdk/py.typed
 dyno_extract_sdk/rest.py
-git_push.sh
 pyproject.toml
 requirements.txt
 setup.cfg

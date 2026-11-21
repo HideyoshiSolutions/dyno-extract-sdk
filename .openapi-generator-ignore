@@ -1,0 +1,10 @@
+# Files openapi-generator should not write into the generated SDKs.
+# Passed to the generator with --ignore-file-override (see Makefile), so it
+# survives the output folders being wiped on every run.
+#
+# CI for the SDKs lives in the root .github/workflows instead.
+
+.github/**
+.travis.yml
+.gitlab-ci.yml
+git_push.sh

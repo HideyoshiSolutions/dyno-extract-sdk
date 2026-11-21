@@ -34,6 +34,7 @@ The quick-start example in each language README shows how to set the API key.
 ├── sdk/
 │   ├── python/                 # Generated Python SDK
 │   └── typescript/             # Generated TypeScript SDK
+├── .openapi-generator-ignore   # Generator files to skip (CI configs, git_push.sh)
 ├── openapitools.json           # Pinned openapi-generator version
 └── Makefile                    # Generation targets
 ```
