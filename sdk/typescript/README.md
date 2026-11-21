@@ -1,0 +1,167 @@
+# dyno-extract-sdk@0.0.0-dev
+
+A TypeScript SDK client for the localhost API.
+
+## Usage
+
+First, install the SDK from npm.
+
+```bash
+npm install dyno-extract-sdk --save
+```
+
+Next, try it out.
+
+
+```ts
+import {
+  Configuration,
+  BlueprintApi,
+} from 'dyno-extract-sdk';
+import type { AddRevisionRequest } from 'dyno-extract-sdk';
+
+async function example() {
+  console.log("🚀 Testing dyno-extract-sdk SDK...");
+  const config = new Configuration({ 
+    // To configure API key authorization: APIKeyHeader
+    apiKey: "YOUR API KEY",
+  });
+  const api = new BlueprintApi(config);
+
+  const body = {
+    // string
+    slug: slug_example,
+    // { [key: string]: any | null; }
+    requestBody: Object,
+  } satisfies AddRevisionRequest;
+
+  try {
+    const data = await api.addRevision(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+
+## Documentation
+
+### API Endpoints
+
+All URIs are relative to *http://localhost*
+
+| Class | Method | HTTP request | Description
+| ----- | ------ | ------------ | -------------
+*BlueprintApi* | [**addRevision**](docs/BlueprintApi.md#addrevision) | **POST** /v1/blueprint/{slug}/def | Add revision
+*BlueprintApi* | [**createBlueprintTask**](docs/BlueprintApi.md#createblueprinttask) | **POST** /v1/blueprint/{slug}/task | Create blueprint task
+*BlueprintApi* | [**createUserBlueprint**](docs/BlueprintApi.md#createuserblueprint) | **POST** /v1/blueprint/ | Create user blueprint
+*BlueprintApi* | [**deleteBlueprint**](docs/BlueprintApi.md#deleteblueprint) | **DELETE** /v1/blueprint/{slug} | Delete blueprint
+*BlueprintApi* | [**deleteRevision**](docs/BlueprintApi.md#deleterevision) | **DELETE** /v1/blueprint/{slug}/def/{revision} | Delete revision
+*BlueprintApi* | [**getBlueprintBySlug**](docs/BlueprintApi.md#getblueprintbyslug) | **GET** /v1/blueprint/{slug} | Get blueprint by slug
+*BlueprintApi* | [**getBlueprintRevisions**](docs/BlueprintApi.md#getblueprintrevisions) | **GET** /v1/blueprint/{slug}/def | Get blueprint revisions
+*BlueprintApi* | [**getBlueprintTask**](docs/BlueprintApi.md#getblueprinttask) | **GET** /v1/blueprint/{slug}/task/{task_id} | Get blueprint task
+*BlueprintApi* | [**getRevision**](docs/BlueprintApi.md#getrevision) | **GET** /v1/blueprint/{slug}/def/{revision} | Get revision
+*BlueprintApi* | [**getUserBlueprints**](docs/BlueprintApi.md#getuserblueprints) | **GET** /v1/blueprint/ | Get user blueprints
+*BlueprintApi* | [**listTasks**](docs/BlueprintApi.md#listtasks) | **GET** /v1/blueprint/{slug}/task | List tasks
+*BlueprintApi* | [**promoteRevision**](docs/BlueprintApi.md#promoterevision) | **POST** /v1/blueprint/{slug}/def/{revision}/promote | Promote revision
+*BlueprintApi* | [**updateBlueprint**](docs/BlueprintApi.md#updateblueprint) | **PATCH** /v1/blueprint/{slug} | Update blueprint
+*FileApi* | [**confirmUpload**](docs/FileApi.md#confirmupload) | **POST** /v1/file/{key}/confirm | Confirm upload
+*FileApi* | [**getFile**](docs/FileApi.md#getfile) | **GET** /v1/file/{key} | Get file
+*FileApi* | [**getFileMetadata**](docs/FileApi.md#getfilemetadata) | **GET** /v1/file/{key}/metadata | Get file metadata
+*FileApi* | [**requestUpload**](docs/FileApi.md#requestupload) | **POST** /v1/file/ | Request upload
+
+
+### Models
+
+- [BlueprintBaseModel](docs/BlueprintBaseModel.md)
+- [BlueprintDefinitionBaseModel](docs/BlueprintDefinitionBaseModel.md)
+- [BlueprintDefinitionBaseModelWithBlueprintBaseModelPage](docs/BlueprintDefinitionBaseModelWithBlueprintBaseModelPage.md)
+- [BlueprintDefinitionModel](docs/BlueprintDefinitionModel.md)
+- [BlueprintModel](docs/BlueprintModel.md)
+- [BlueprintModelPage](docs/BlueprintModelPage.md)
+- [BlueprintTaskModel](docs/BlueprintTaskModel.md)
+- [BlueprintTaskModelPage](docs/BlueprintTaskModelPage.md)
+- [BlueprintTaskStatus](docs/BlueprintTaskStatus.md)
+- [ConsentRequiredErrorModel](docs/ConsentRequiredErrorModel.md)
+- [CreateBlueprintModel](docs/CreateBlueprintModel.md)
+- [CreateBlueprintTaskModel](docs/CreateBlueprintTaskModel.md)
+- [CreateFileModel](docs/CreateFileModel.md)
+- [ErrorModel](docs/ErrorModel.md)
+- [FileModel](docs/FileModel.md)
+- [FileStateEnum](docs/FileStateEnum.md)
+- [HTTPValidationError](docs/HTTPValidationError.md)
+- [LegalDocumentType](docs/LegalDocumentType.md)
+- [LocationInner](docs/LocationInner.md)
+- [ModelSlug](docs/ModelSlug.md)
+- [PendingLegalDocumentModel](docs/PendingLegalDocumentModel.md)
+- [UpdateBlueprintModel](docs/UpdateBlueprintModel.md)
+- [UploadRequestModel](docs/UploadRequestModel.md)
+- [ValidationError](docs/ValidationError.md)
+
+### Authorization
+
+
+Authentication schemes defined for the API:
+<a id="APIKeyHeader"></a>
+#### APIKeyHeader
+
+
+- **Type**: API key
+- **API key parameter name**: `Authorization`
+- **Location**: HTTP header
+<a id="OAuthScheme"></a>
+#### OAuthScheme
+
+
+## About
+
+This TypeScript SDK client supports the [Fetch API](https://fetch.spec.whatwg.org/)
+and is automatically generated by the
+[OpenAPI Generator](https://openapi-generator.tech) project:
+
+- API version: `0.0.0-dev`
+- Package version: `0.0.0-dev`
+- Generator version: `7.27.0`
+- Build package: `org.openapitools.codegen.languages.TypeScriptFetchClientCodegen`
+
+The generated npm module supports the following:
+
+- Environments
+  * Node.js
+  * Webpack
+  * Browserify
+- Language levels
+  * ES5 - you must have a Promises/A+ library installed
+  * ES6
+- Module systems
+  * CommonJS
+  * ES6 module system
+
+
+## Development
+
+### Building
+
+To build the TypeScript source code, you need to have Node.js and npm installed.
+After cloning the repository, navigate to the project directory and run:
+
+```bash
+npm install
+npm run build
+```
+
+### Publishing
+
+Once you've built the package, you can publish it to npm:
+
+```bash
+npm publish
+```
+
+## License
+
+[]()
