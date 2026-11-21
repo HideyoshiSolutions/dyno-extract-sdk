@@ -1,6 +1,6 @@
 # BlueprintApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.dyno.hideyoshi.sh*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|

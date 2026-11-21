@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-export const BASE_PATH: string = "http://localhost".replace(/\/+$/, "");
+export const BASE_PATH: string = "https://api.dyno.hideyoshi.sh".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path

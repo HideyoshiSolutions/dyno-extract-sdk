@@ -1,6 +1,6 @@
 # dyno-extract-sdk@0.0.0-dev
 
-A TypeScript SDK client for the localhost API.
+A TypeScript SDK client for the api.dyno.hideyoshi.sh API.
 
 ## Usage
 
@@ -52,7 +52,7 @@ example().catch(console.error);
 
 ### API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.dyno.hideyoshi.sh*
 
 | Class | Method | HTTP request | Description
 | ----- | ------ | ------------ | -------------

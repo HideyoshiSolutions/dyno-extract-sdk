@@ -4,6 +4,9 @@ GENERATOR  := npx @openapitools/openapi-generator-cli generate
 # Only operations with these tags (and the schemas they reference) end up in the SDK
 TAGS       ?= blueprint,file
 
+# Default base URL baked into the SDKs (users can still override it at runtime)
+SERVER_URL ?= https://api.dyno.hideyoshi.sh/
+
 BUILD_DIR     := build
 FILTERED_SPEC := $(BUILD_DIR)/dyno-extract.filtered.json
 
@@ -29,7 +32,7 @@ check-spec:
 
 filter-spec: check-spec
 	@mkdir -p "$(BUILD_DIR)"
-	jq --arg tags "$(TAGS)" -f scripts/filter-spec.jq "$(SPEC)" > "$(FILTERED_SPEC)"
+	jq --arg tags "$(TAGS)" --arg server "$(SERVER_URL)" -f scripts/filter-spec.jq "$(SPEC)" > "$(FILTERED_SPEC)"
 
 sdk-python: filter-spec clean-python
 	@mkdir -p "$(PY_OUT)" && cp "$(IGNORE_FILE)" "$(PY_OUT)/.openapi-generator-ignore"

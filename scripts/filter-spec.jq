@@ -1,7 +1,11 @@
 # Trim an OpenAPI spec down to the operations carrying one of the given tags,
 # and the component schemas they (transitively) reference.
 #
-# Usage: jq --arg tags "blueprint,file" -f scripts/filter-spec.jq spec.json
+# Also sets the spec's server URL, which the generators use as the SDKs' default
+# base URL. A trailing slash is dropped, since every path already starts with one.
+#
+# Usage: jq --arg tags "blueprint,file" --arg server "https://api.example.com" \
+#           -f scripts/filter-spec.jq spec.json
 
 ($tags | split(",")) as $keep
 | def http_methods: ["get","put","post","delete","options","head","patch","trace"];
@@ -31,3 +35,6 @@
   # 3. Drop unreferenced schemas and unused tag definitions.
   | .components.schemas |= with_entries(select(.key | IN($used[])))
   | if .tags then .tags |= map(select(.name | IN($keep[]))) else . end
+
+  # 4. Point the SDKs at the given server by default.
+  | .servers = [{url: ($server | sub("/+$"; ""))}]

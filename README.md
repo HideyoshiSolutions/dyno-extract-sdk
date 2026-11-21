@@ -59,6 +59,7 @@ You can override these variables:
 | `SPEC`   | `openapi/dyno-extract.json` | Path to the OpenAPI spec                      |
 | `TAGS`   | `blueprint,file`            | Comma-separated operation tags to include     |
 | `OUTPUT` | `./sdk/`                    | Root output directory for the generated SDKs  |
+| `SERVER_URL` | `https://api.dyno.hideyoshi.sh/` | Default base URL baked into the SDKs |
 
 Example:
 

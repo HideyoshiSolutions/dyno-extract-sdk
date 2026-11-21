@@ -1,6 +1,6 @@
 # dyno_extract_sdk.BlueprintApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.dyno.hideyoshi.sh*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,10 +34,10 @@ from dyno_extract_sdk.models.blueprint_definition_model import BlueprintDefiniti
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -117,10 +117,10 @@ from dyno_extract_sdk.models.create_blueprint_task_model import CreateBlueprintT
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +202,10 @@ from dyno_extract_sdk.models.create_blueprint_model import CreateBlueprintModel
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -281,10 +281,10 @@ import dyno_extract_sdk
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -358,10 +358,10 @@ import dyno_extract_sdk
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -440,10 +440,10 @@ from dyno_extract_sdk.models.blueprint_model import BlueprintModel
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -522,10 +522,10 @@ from dyno_extract_sdk.models.blueprint_definition_base_model_with_blueprint_base
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -606,10 +606,10 @@ from dyno_extract_sdk.models.blueprint_task_model import BlueprintTaskModel
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -688,10 +688,10 @@ from dyno_extract_sdk.models.blueprint_definition_model import BlueprintDefiniti
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -770,10 +770,10 @@ from dyno_extract_sdk.models.blueprint_model_page import BlueprintModelPage
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -852,10 +852,10 @@ from dyno_extract_sdk.models.blueprint_task_model_page import BlueprintTaskModel
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -937,10 +937,10 @@ import dyno_extract_sdk
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1018,10 +1018,10 @@ from dyno_extract_sdk.models.update_blueprint_model import UpdateBlueprintModel
 from dyno_extract_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.dyno.hideyoshi.sh
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dyno_extract_sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.dyno.hideyoshi.sh"
 )
 
 # The client must configure the authentication and authorization parameters
