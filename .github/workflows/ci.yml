@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Regenerate the SDKs from the spec and fail if they differ from the committed ones
+  drift:
+    name: Generated SDKs are up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Regenerate SDKs
+        run: make
+
+      - name: Check for differences
+        run: |
+          if [ -n "$(git status --porcelain -- sdk)" ]; then
+            echo "::error::The committed SDKs are out of date. Run 'make' and commit the result."
+            git status --short -- sdk
+            git --no-pager diff --stat -- sdk
+            git --no-pager diff -- sdk
+            exit 1
+          fi
+          echo "Committed SDKs match the generated output."
+
+  python:
+    name: Python SDK
+    uses: ./.github/workflows/sdk-python.yml
+
+  typescript:
+    name: TypeScript SDK
+    uses: ./.github/workflows/sdk-typescript.yml

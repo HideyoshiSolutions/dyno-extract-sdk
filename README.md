@@ -74,3 +74,13 @@ make SPEC=path/to/new-spec.json TAGS=blueprint,file,task
    - TypeScript: `typescript-fetch` generator, with ES6 and interfaces
 
 > **Note:** Each run wipes `sdk/python` and `sdk/typescript` completely, including their READMEs. Put project-wide documentation in this file.
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every push to `main` and on every pull request:
+
+- **Drift check**: runs `make` and fails if the regenerated `sdk/` differs from the committed one. If it fails, run `make` locally and commit the result.
+- **Python SDK** (`sdk-python.yml`): installs the package on Python 3.11 to 3.14, checks that it imports, type-checks it with mypy, and builds the sdist and wheel.
+- **TypeScript SDK** (`sdk-typescript.yml`): installs and compiles the package (CJS and ESM) on Node 20, 22 and 24.
+
+Each SDK workflow can also be started on its own from the Actions tab.

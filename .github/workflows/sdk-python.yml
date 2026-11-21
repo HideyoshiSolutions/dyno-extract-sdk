@@ -1,0 +1,42 @@
+name: Python SDK
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    defaults:
+      run:
+        working-directory: sdk/python
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install SDK and tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install . mypy types-python-dateutil build
+
+      - name: Import package
+        # Run from outside the source tree so the installed package is the one imported
+        working-directory: ${{ runner.temp }}
+        run: python -c "import dyno_extract_sdk, dyno_extract_sdk.api, dyno_extract_sdk.models"
+
+      - name: Type check
+        run: mypy dyno_extract_sdk
+
+      - name: Build distribution
+        run: python -m build
