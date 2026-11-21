@@ -38,3 +38,7 @@
 
   # 4. Point the SDKs at the given server by default.
   | .servers = [{url: ($server | sub("/+$"; ""))}]
+
+  # 5. Declare the SDKs' license (the Python generator reads it from info.license).
+  #    $license must be an SPDX id, since OpenAPI 3.1 requires info.license.identifier.
+  | .info.license = {name: $license, identifier: $license}

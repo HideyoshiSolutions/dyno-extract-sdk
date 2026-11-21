@@ -7,6 +7,14 @@ TAGS       ?= blueprint,file
 # Default base URL baked into the SDKs (users can still override it at runtime)
 SERVER_URL ?= https://api.dyno.hideyoshi.sh/
 
+# SDK release version, in SemVer (used as-is for npm). Python needs the PEP 440
+# spelling (0.1.0-alpha.1 -> 0.1.0a1), derived here so both SDKs stay in step.
+VERSION    ?= 0.1.0-alpha.1
+PY_VERSION := $(shell echo "$(VERSION)" | sed -E 's/-alpha\.?/a/; s/-beta\.?/b/; s/-rc\.?/rc/')
+
+# License declared in the package metadata; the LICENSE file is copied into each SDK
+LICENSE_NAME := MIT
+
 BUILD_DIR     := build
 FILTERED_SPEC := $(BUILD_DIR)/dyno-extract.filtered.json
 
@@ -32,7 +40,8 @@ check-spec:
 
 filter-spec: check-spec
 	@mkdir -p "$(BUILD_DIR)"
-	jq --arg tags "$(TAGS)" --arg server "$(SERVER_URL)" -f scripts/filter-spec.jq "$(SPEC)" > "$(FILTERED_SPEC)"
+	jq --arg tags "$(TAGS)" --arg server "$(SERVER_URL)" --arg license "$(LICENSE_NAME)" \
+		-f scripts/filter-spec.jq "$(SPEC)" > "$(FILTERED_SPEC)"
 
 sdk-python: filter-spec clean-python
 	@mkdir -p "$(PY_OUT)" && cp "$(IGNORE_FILE)" "$(PY_OUT)/.openapi-generator-ignore"
@@ -41,7 +50,8 @@ sdk-python: filter-spec clean-python
 		-g python --library asyncio \
 		-o "$(PY_OUT)" \
 		--global-property "$(GLOBAL_PROPS)" \
-		--additional-properties packageName=dyno_extract_sdk,projectName=dyno-extract-sdk
+		--additional-properties packageName=dyno_extract_sdk,projectName=dyno-extract-sdk,packageVersion=$(PY_VERSION)
+	cp LICENSE "$(PY_OUT)/LICENSE"
 
 sdk-typescript: filter-spec clean-typescript
 	@mkdir -p "$(TS_OUT)" && cp "$(IGNORE_FILE)" "$(TS_OUT)/.openapi-generator-ignore"
@@ -50,7 +60,8 @@ sdk-typescript: filter-spec clean-typescript
 		-g typescript-fetch \
 		-o "$(TS_OUT)" \
 		--global-property "$(GLOBAL_PROPS)" \
-		--additional-properties npmName=dyno-extract-sdk,supportsES6=true,withInterfaces=true
+		--additional-properties npmName=dyno-extract-sdk,npmVersion=$(VERSION),licenseName=$(LICENSE_NAME),supportsES6=true,withInterfaces=true
+	cp LICENSE "$(TS_OUT)/LICENSE"
 
 clean: clean-python clean-typescript clean-spec
 
