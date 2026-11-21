@@ -1,2 +1,40 @@
+# Build output (filtered spec produced by `make filter-spec`)
+/build/
+
+# Node / openapi-generator-cli tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+*.egg-info/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDEs and editors
 .idea/
-build/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
