@@ -4,14 +4,14 @@ All URIs are relative to *https://api.dyno.hideyoshi.sh*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**confirm_upload**](FileApi.md#confirm_upload) | **POST** /v1/file/{key}/confirm | Confirm upload
-[**get_file**](FileApi.md#get_file) | **GET** /v1/file/{key} | Get file
-[**get_file_metadata**](FileApi.md#get_file_metadata) | **GET** /v1/file/{key}/metadata | Get file metadata
+[**confirm_upload**](FileApi.md#confirm_upload) | **POST** /v1/file/{file_id}/confirm | Confirm upload
+[**get_file**](FileApi.md#get_file) | **GET** /v1/file/{file_id} | Get file
+[**get_file_metadata**](FileApi.md#get_file_metadata) | **GET** /v1/file/{file_id}/metadata | Get file metadata
 [**request_upload**](FileApi.md#request_upload) | **POST** /v1/file/ | Request upload
 
 
 # **confirm_upload**
-> object confirm_upload(key)
+> object confirm_upload(file_id)
 
 Confirm upload
 
@@ -45,11 +45,11 @@ configuration.api_key['APIKeyHeader'] = os.environ["API_KEY"]
 async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.FileApi(api_client)
-    key = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    file_id = 'file_id_example' # str | 
 
     try:
         # Confirm upload
-        api_response = await api_instance.confirm_upload(key)
+        api_response = await api_instance.confirm_upload(file_id)
         print("The response of FileApi->confirm_upload:\n")
         pprint(api_response)
     except Exception as e:
@@ -63,7 +63,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **UUID**|  | 
+ **file_id** | **str**|  | 
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_file**
-> bytes get_file(key)
+> bytes get_file(file_id)
 
 Get file
 
@@ -124,11 +124,11 @@ configuration.api_key['APIKeyHeader'] = os.environ["API_KEY"]
 async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.FileApi(api_client)
-    key = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    file_id = 'file_id_example' # str | 
 
     try:
         # Get file
-        api_response = await api_instance.get_file(key)
+        api_response = await api_instance.get_file(file_id)
         print("The response of FileApi->get_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -142,7 +142,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **UUID**|  | 
+ **file_id** | **str**|  | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_file_metadata**
-> FileModel get_file_metadata(key)
+> FileModel get_file_metadata(file_id)
 
 Get file metadata
 
@@ -204,11 +204,11 @@ configuration.api_key['APIKeyHeader'] = os.environ["API_KEY"]
 async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.FileApi(api_client)
-    key = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    file_id = 'file_id_example' # str | 
 
     try:
         # Get file metadata
-        api_response = await api_instance.get_file_metadata(key)
+        api_response = await api_instance.get_file_metadata(file_id)
         print("The response of FileApi->get_file_metadata:\n")
         pprint(api_response)
     except Exception as e:
@@ -222,7 +222,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **UUID**|  | 
+ **file_id** | **str**|  | 
 
 ### Return type
 

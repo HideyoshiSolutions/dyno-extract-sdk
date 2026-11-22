@@ -4,16 +4,16 @@ All URIs are relative to *https://api.dyno.hideyoshi.sh*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**confirmUpload**](FileApi.md#confirmupload) | **POST** /v1/file/{key}/confirm | Confirm upload |
-| [**getFile**](FileApi.md#getfile) | **GET** /v1/file/{key} | Get file |
-| [**getFileMetadata**](FileApi.md#getfilemetadata) | **GET** /v1/file/{key}/metadata | Get file metadata |
+| [**confirmUpload**](FileApi.md#confirmupload) | **POST** /v1/file/{file_id}/confirm | Confirm upload |
+| [**getFile**](FileApi.md#getfile) | **GET** /v1/file/{file_id} | Get file |
+| [**getFileMetadata**](FileApi.md#getfilemetadata) | **GET** /v1/file/{file_id}/metadata | Get file metadata |
 | [**requestUpload**](FileApi.md#requestupload) | **POST** /v1/file/ | Request upload |
 
 
 
 ## confirmUpload
 
-> any confirmUpload(key)
+> any confirmUpload(fileId)
 
 Confirm upload
 
@@ -36,7 +36,7 @@ async function example() {
 
   const body = {
     // string
-    key: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    fileId: fileId_example,
   } satisfies ConfirmUploadRequest;
 
   try {
@@ -56,7 +56,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **key** | `string` |  | [Defaults to `undefined`] |
+| **fileId** | `string` |  | [Defaults to `undefined`] |
 
 ### Return type
 
@@ -85,7 +85,7 @@ example().catch(console.error);
 
 ## getFile
 
-> Blob getFile(key)
+> Blob getFile(fileId)
 
 Get file
 
@@ -108,7 +108,7 @@ async function example() {
 
   const body = {
     // string
-    key: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    fileId: fileId_example,
   } satisfies GetFileRequest;
 
   try {
@@ -128,7 +128,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **key** | `string` |  | [Defaults to `undefined`] |
+| **fileId** | `string` |  | [Defaults to `undefined`] |
 
 ### Return type
 
@@ -157,7 +157,7 @@ example().catch(console.error);
 
 ## getFileMetadata
 
-> FileModel getFileMetadata(key)
+> FileModel getFileMetadata(fileId)
 
 Get file metadata
 
@@ -180,7 +180,7 @@ async function example() {
 
   const body = {
     // string
-    key: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    fileId: fileId_example,
   } satisfies GetFileMetadataRequest;
 
   try {
@@ -200,7 +200,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **key** | `string` |  | [Defaults to `undefined`] |
+| **fileId** | `string` |  | [Defaults to `undefined`] |
 
 ### Return type
 

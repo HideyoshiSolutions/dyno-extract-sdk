@@ -380,7 +380,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    revision = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    revision = 'revision_example' # str | 
 
     try:
         # Delete revision
@@ -399,7 +399,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **revision** | **UUID**|  | 
+ **revision** | **str**|  | 
 
 ### Return type
 
@@ -462,7 +462,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    revision = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    revision = 'revision_example' # str |  (optional)
 
     try:
         # Get blueprint by slug
@@ -481,7 +481,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **revision** | **UUID**|  | [optional] 
+ **revision** | **str**|  | [optional] 
 
 ### Return type
 
@@ -628,7 +628,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    task_id = 56 # int | 
+    task_id = 'task_id_example' # str | 
 
     try:
         # Get blueprint task
@@ -647,7 +647,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **task_id** | **int**|  | 
+ **task_id** | **str**|  | 
 
 ### Return type
 
@@ -710,7 +710,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    revision = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    revision = 'revision_example' # str | 
 
     try:
         # Get revision
@@ -729,7 +729,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **revision** | **UUID**|  | 
+ **revision** | **str**|  | 
 
 ### Return type
 
@@ -874,7 +874,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    revision = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    revision = 'revision_example' # str |  (optional)
     page = 0 # int |  (optional) (default to 0)
     limit = 10 # int |  (optional) (default to 10)
 
@@ -895,7 +895,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **revision** | **UUID**|  | [optional] 
+ **revision** | **str**|  | [optional] 
  **page** | **int**|  | [optional] [default to 0]
  **limit** | **int**|  | [optional] [default to 10]
 
@@ -959,7 +959,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dyno_extract_sdk.BlueprintApi(api_client)
     slug = 'slug_example' # str | 
-    revision = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    revision = 'revision_example' # str | 
 
     try:
         # Promote revision
@@ -976,7 +976,7 @@ async with dyno_extract_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slug** | **str**|  | 
- **revision** | **UUID**|  | 
+ **revision** | **str**|  | 
 
 ### Return type
 

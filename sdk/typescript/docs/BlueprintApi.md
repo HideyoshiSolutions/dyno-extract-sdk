@@ -344,7 +344,7 @@ async function example() {
     // string
     slug: slug_example,
     // string
-    revision: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    revision: revision_example,
   } satisfies DeleteRevisionRequest;
 
   try {
@@ -419,7 +419,7 @@ async function example() {
     // string
     slug: slug_example,
     // string (optional)
-    revision: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    revision: revision_example,
   } satisfies GetBlueprintBySlugRequest;
 
   try {
@@ -571,8 +571,8 @@ async function example() {
   const body = {
     // string
     slug: slug_example,
-    // number
-    taskId: 56,
+    // string
+    taskId: taskId_example,
   } satisfies GetBlueprintTaskRequest;
 
   try {
@@ -593,7 +593,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **slug** | `string` |  | [Defaults to `undefined`] |
-| **taskId** | `number` |  | [Defaults to `undefined`] |
+| **taskId** | `string` |  | [Defaults to `undefined`] |
 
 ### Return type
 
@@ -647,7 +647,7 @@ async function example() {
     // string
     slug: slug_example,
     // string
-    revision: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    revision: revision_example,
   } satisfies GetRevisionRequest;
 
   try {
@@ -797,7 +797,7 @@ async function example() {
     // string
     slug: slug_example,
     // string (optional)
-    revision: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    revision: revision_example,
     // number (optional)
     page: 56,
     // number (optional)
@@ -878,7 +878,7 @@ async function example() {
     // string
     slug: slug_example,
     // string
-    revision: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    revision: revision_example,
   } satisfies PromoteRevisionRequest;
 
   try {
